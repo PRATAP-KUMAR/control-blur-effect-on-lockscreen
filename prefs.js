@@ -107,7 +107,7 @@ class PrefsWidget {
         this.brightness_scale.set_value(this.gsettings.get_double('brightness')); })
         
         this.brightness_scale.set_value(this.gsettings.get_double('brightness'));
-        this.brightness_scale.connect('value-changed', (entry) => { this.gsettings.get_double('brightness', entry.get_value()); });
+        this.brightness_scale.connect('value-changed', (entry) => { this.gsettings.set_double('brightness', entry.get_value()); });
 
         hbox.append(brightness_label);
         hbox.append(this.brightness_scale);
