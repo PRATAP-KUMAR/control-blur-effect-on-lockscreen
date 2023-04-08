@@ -22,6 +22,8 @@ or you can change the background-color to your choice.
 
 Please note that any changes to the `stylesheet.css` file will reflect only after a gnome-shell restart.
 
+Sometimes, turning off and on the extension will do the trick. You may try this first.
+
 To restart gnome-shell,  
 If you are on `xorg` - Use Alt+F2 r enter method.  
 on `wayland` you need to logout and login.
