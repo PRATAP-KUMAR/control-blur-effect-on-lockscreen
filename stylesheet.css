@@ -1,0 +1,7 @@
+/* Delete this styleshet.css file if you wish to have default color/transperency set by GNOME for password entry 
+or you can change the background-color to your choice.
+*/
+
+.login-dialog-prompt-entry {
+    background-color: #000;
+}

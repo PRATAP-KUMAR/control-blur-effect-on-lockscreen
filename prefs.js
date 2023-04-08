@@ -36,10 +36,9 @@ class PrefsWidget {
         });
         this.vbox.set_size_request(50, 50);
 
-
         this.addBoldTextToBox('Adjust the Values as Required', this.vbox);
 
-        this.vbox.append(new Gtk.Separator({ orientation: Gtk.Orientation.HORIZONTAL, margin_bottom: 5, margin_top: 5 }));
+        this.vbox.append(new Gtk.Separator({orientation: Gtk.Orientation.HORIZONTAL, margin_bottom: 5, margin_top: 5}));
 
         this.vbox.append(this.adjustBlur());
         this.vbox.append(this.adjustBrightness());
@@ -50,8 +49,8 @@ class PrefsWidget {
     }
 
     adjustBlur() {
-        let hbox = new Gtk.Box({ orientation: Gtk.Orientation.HORIZONTAL, margin_top: 5 });
-        let blurLabel = new Gtk.Label({ label: 'Adjust Sigma', xalign: 0, hexpand: true });
+        let hbox = new Gtk.Box({orientation: Gtk.Orientation.HORIZONTAL, margin_top: 5});
+        let blurLabel = new Gtk.Label({label: 'Adjust Sigma', xalign: 0, hexpand: true});
 
         this.blur_adjustment = new Gtk.Adjustment({
             lower: 0,
@@ -71,7 +70,7 @@ class PrefsWidget {
             adjustment: this.blur_adjustment,
         });
 
-        this.resetBlurButton = new Gtk.Button({ margin_start: 5 });
+        this.resetBlurButton = new Gtk.Button({margin_start: 5});
         this.resetBlurButton.set_label("Reset to Extensions's Default Value");
         this.resetBlurButton.connect('clicked', () => {
             this._settings.set_int('sigma', 0);
@@ -91,8 +90,8 @@ class PrefsWidget {
     }
 
     adjustBrightness() {
-        let hbox = new Gtk.Box({ orientation: Gtk.Orientation.HORIZONTAL, margin_top: 5 });
-        let brightnessLabel = new Gtk.Label({ label: 'Adjust Brightness', xalign: 0, hexpand: true });
+        let hbox = new Gtk.Box({orientation: Gtk.Orientation.HORIZONTAL, margin_top: 5});
+        let brightnessLabel = new Gtk.Label({label: 'Adjust Brightness', xalign: 0, hexpand: true});
 
         this.brightness_adjustment = new Gtk.Adjustment({
             lower: 0,
@@ -112,7 +111,7 @@ class PrefsWidget {
             adjustment: this.brightness_adjustment,
         });
 
-        this.resetBrightnessButton = new Gtk.Button({ margin_start: 5 });
+        this.resetBrightnessButton = new Gtk.Button({margin_start: 5});
         this.resetBrightnessButton.set_label("Reset to Extensions's Default Value");
         this.resetBrightnessButton.connect('clicked', () => {
             this._settings.set_double('brightness', 0.55);
@@ -132,7 +131,7 @@ class PrefsWidget {
     }
 
     addBoldTextToBox(text, box) {
-        let txt = new Gtk.Label({ xalign: 0, margin_top: 20 });
+        let txt = new Gtk.Label({xalign: 0, margin_top: 20});
         txt.set_markup(`<b>${text}</b>`);
         txt.set_wrap(true);
         box.append(txt);

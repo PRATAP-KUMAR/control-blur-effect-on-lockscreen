@@ -21,6 +21,7 @@ class modified {
     _controlBlur() {
         const themeContext = St.ThemeContext.get_for_stage(global.stage);
 
+
         this._settings = ExtensionUtils.getSettings();
         let BRIGHTNESS_VALUE = this._settings.get_double('brightness');
         let SIGMA_VALUE = this._settings.get_int('sigma');
