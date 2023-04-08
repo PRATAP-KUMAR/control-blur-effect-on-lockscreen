@@ -19,3 +19,9 @@ or you can change the background-color to your choice.
     background-color: #000;
 }
 ````
+
+Please note that any changes to the `stylesheet.css` file will reflect only after a gnome-shell restart.
+
+To restart gnome-shell,  
+If you are on `xorg` - Use Alt+F2 r enter method.  
+on `wayland` you need to logout and login.
