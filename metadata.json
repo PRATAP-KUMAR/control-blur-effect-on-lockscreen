@@ -8,7 +8,7 @@
   ],
   "settings-schema": "org.gnome.shell.extensions.blur",
   "shell-version": [
-    "44"
+    "45"
   ],
   "url": "https://github.com/PRATAP-KUMAR/Control_Blur_Effect_On_Lock_Screen",
   "uuid": "ControlBlurEffectOnLockScreen@pratap.fastmail.fm",
