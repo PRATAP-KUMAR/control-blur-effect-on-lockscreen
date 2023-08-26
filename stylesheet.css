@@ -1,7 +1,5 @@
-/* Delete this styleshet.css file if you wish to have default color/transperency set by GNOME for password entry 
-or you can change the background-color to your choice.
-*/
+/* uncomment below lines and edit the background-color as you wish if you want to change the password-prompt entry field on the lock screen */
 
-.login-dialog-prompt-entry {
+/* .login-dialog-prompt-entry {
     background-color: #000;
-}
+} */

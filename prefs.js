@@ -32,7 +32,7 @@ export default class ControlBlurExtensionPreferences extends ExtensionPreference
             this.resetBlurButton = new Gtk.Button({margin_start: 5});
             this.resetBlurButton.set_label("Reset to Extensions's Default Value");
             this.resetBlurButton.connect('clicked', () => {
-                window._settings.set_int('sigma', 0);
+                window._settings.set_int('sigma', 1);
                 this.blur_scale.set_value(window._settings.get_int('sigma'));
             });
 
@@ -73,7 +73,7 @@ export default class ControlBlurExtensionPreferences extends ExtensionPreference
             this.resetBrightnessButton = new Gtk.Button({margin_start: 5});
             this.resetBrightnessButton.set_label("Reset to Extensions's Default Value");
             this.resetBrightnessButton.connect('clicked', () => {
-                window._settings.set_double('brightness', 0.55);
+                window._settings.set_double('brightness', 0.65);
                 this.brightness_scale.set_value(window._settings.get_double('brightness'));
             });
 

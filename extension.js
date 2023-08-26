@@ -5,12 +5,8 @@ import * as UnlockDialog from 'resource:///org/gnome/shell/ui/unlockDialog.js';
 import St from 'gi://St';
 
 export default class ControlBlurExtension extends Extension {
-    constructor(metadata) {
-        super(metadata);
-        this._injectionManager = new InjectionManager();
-    }
-
     enable() {
+        this._injectionManager = new InjectionManager();
         this._injectionManager.overrideMethod(UnlockDialog.UnlockDialog.prototype, '_updateBackgroundEffects',
             () => {
                 const settings = this.getSettings();
@@ -36,5 +32,6 @@ export default class ControlBlurExtension extends Extension {
 
     disable() {
         this._injectionManager.clear();
+        this._injectionManager = null;
     }
 }
