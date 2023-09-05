@@ -6,7 +6,6 @@ export default class ControlBlurExtension extends Extension {
     enable() {
         this._settings = this.getSettings();
         this._dialog = Main.screenShield._dialog;
-        this._originalEffects = this._dialog._updateBackgroundEffects;
         if (this._dialog)
             this._dialog._updateBackgroundEffects = this._myEffects();
     }
@@ -29,7 +28,6 @@ export default class ControlBlurExtension extends Extension {
     // unlock-dialog is used in session-modes because this extension purpose is
     // to tweak blur effect on lock screen itself.
     disable() {
-        this._dialog._updateBackgroundEffects = this._originalEffects;
         this._dialog = null;
         this._settings = null;
     }
