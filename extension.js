@@ -1,6 +1,9 @@
-import {Extension} from 'resource:///org/gnome/shell/extensions/extension.js';
-import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 import St from 'gi://St';
+import * as Main from 'resource:///org/gnome/shell/ui/main.js';
+import * as Config from 'resource:///org/gnome/shell/misc/config.js';
+import {Extension} from 'resource:///org/gnome/shell/extensions/extension.js';
+
+const major = Number(Config.PACKAGE_VERSION.split('.')[0]);
 
 export default class ControlBlurExtension extends Extension {
     enable() {
@@ -17,10 +20,17 @@ export default class ControlBlurExtension extends Extension {
             const effect = widget.get_effect('blur');
 
             if (effect) {
-                effect.set({
-                    brightness: this._settings.get_double('brightness'),
-                    sigma: this._settings.get_int('sigma') * themeContext.scale_factor,
-                });
+                if (major === 46) {
+                    effect.set({
+                        brightness: this._settings.get_double('brightness'),
+                        radius: this._settings.get_int('sigma') * themeContext.scale_factor,
+                    });
+                } else {
+                    effect.set({
+                        brightness: this._settings.get_double('brightness'),
+                        sigma: this._settings.get_int('sigma') * themeContext.scale_factor,
+                    });
+                }
             }
         }
     }
