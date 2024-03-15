@@ -1,5 +1,5 @@
 <schemalist>
-  <schema id="org.gnome.shell.extensions.blur" path="/org/gnome/shell/extensions/blur/">
+  <schema id="org.gnome.shell.extensions.control-blur-effect-on-lockscreen" path="/org/gnome/shell/extensions/control-blur-effect-on-lockscreen/">
 
     <key name="brightness" type="d">
       <range min="0" max="1" />

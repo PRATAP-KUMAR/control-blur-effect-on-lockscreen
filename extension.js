@@ -3,7 +3,7 @@ import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 import * as Config from 'resource:///org/gnome/shell/misc/config.js';
 import {Extension} from 'resource:///org/gnome/shell/extensions/extension.js';
 
-const major = Number(Config.PACKAGE_VERSION.split('.')[0]);
+const GNOME_SHELL_VERSION = Number(Config.PACKAGE_VERSION.split('.')[0]);
 
 export default class ControlBlurExtension extends Extension {
     enable() {
@@ -20,7 +20,7 @@ export default class ControlBlurExtension extends Extension {
             const effect = widget.get_effect('blur');
 
             if (effect) {
-                if (major === 46) {
+                if (GNOME_SHELL_VERSION === 46) {
                     effect.set({
                         brightness: this._settings.get_double('brightness'),
                         radius: this._settings.get_int('sigma') * themeContext.scale_factor,
